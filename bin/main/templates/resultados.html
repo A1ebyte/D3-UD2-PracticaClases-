@@ -1,0 +1,12 @@
+<html>
+<body>
+	<ol>
+		<li th:each="elemento:${datos.datosFinales}" th:text="${elemento}"></li>
+	</ol>
+	<!--<p th:text="|Nombre: ${datos.nombre}|" />
+	<p th:text="|Sexo: ${datos.sex}|" />
+	<p th:if="${datos.hobbies.size>0}" th:text="|Hobbies: ${datos.hobbies}|" />
+	<p th:if="${datos.hobbies.size==0}" th:text="|No me gusta hacer nada|" />-->
+	<p>Volver al <a href="/">Inicio</a></p>
+</body>
+</html>
