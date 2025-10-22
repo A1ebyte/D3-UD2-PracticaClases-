@@ -62,4 +62,10 @@ public class Datos
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
+
+	@Override
+	public String toString() {
+		return "Datos [nombre=" + nombre + ", sex=" + sex + ", hobbies=" + hobbies + ", estado=" + estado
+				+ ", datosFinales=" + datosFinales + "]";
+	}
 }

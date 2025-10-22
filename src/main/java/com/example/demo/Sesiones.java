@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -20,13 +21,13 @@ public class Sesiones
 	}
 	
 	@PostMapping("/")
-	public String postMethodName(@Valid Datos datos, BindingResult result) 
+	public String postMethodName(@Valid Datos datos, BindingResult result, @RequestParam (name="opcion") int opcion) 
 	{	
 		if (result.hasErrors()) {
 			return "formulario"+datos.getEstado();
 		}
 		System.out.println(datos);
-		datos.setEstado(datos.getEstado()+1);
+		datos.setEstado(datos.getEstado()+opcion);
 		if(datos.getEstado()>3) 
 		{
 			ArrayList<String> info=new ArrayList<String>();
